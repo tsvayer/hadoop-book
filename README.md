@@ -32,6 +32,27 @@ is not contained there due to size restrictions. You can find information about 
 the full weather dataset on the book's website at [http://www.hadoopbook.com/]
 (http://www.hadoopbook.com/).
 
+## Vagrant && Docker
+
+```bash
+% vagrant up
+```
+
+will create new VM with Docker and build example code.
+It will also run chapter 2 example to make sure Hadoop installation is working.
+To run other chapter examples:
+
+```bash
+% vagrant ssh
+% /vagrant/run.sh ch02
+```
+
+Alternatively edit Vagrantfile shell provision section and run:
+
+```bash
+% vagrant provision
+```
+
 ## Hadoop Component Versions
 
 This edition of the book works with Hadoop 2. It has not been tested extensively with 

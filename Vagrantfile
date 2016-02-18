@@ -7,6 +7,7 @@ Vagrant.configure(2) do |config|
   #config.vm.synced_folder "./", "/vagrant"
 
   config.vm.provider "virtualbox" do |vb|
+    #we need memory to build java/scala code and run Hadoop examples
     vb.memory = "2048"
   end
 
@@ -16,9 +17,6 @@ Vagrant.configure(2) do |config|
   end
   
   config.vm.provision "shell", inline: <<-SHELL
-  #  sudo apt-get update && \
-  #    sudo apt-get -y upgrade && \
-  #    sudo apt-get -y install git
     /vagrant/build.sh
     /vagrant/run.sh ch02
   SHELL
